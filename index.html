@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+	<style>
+		html, body{
+			margin: 0;
+			font: 20px/24px "PT Sans", sans-serif;
+		}
+		.slide, .slide div{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 1024px;
+			height: 768px;
+			background-position: center center;
+			background-repeat: no-repeat;
+		}
+		.slide{
+			background-color: #d1c9b8;
+		}
+		.slide.img_bottom{
+			background-position: center bottom;
+		}
+		.slide.heading p, .slide.img_center p, .slide.img_top p, .slide.img_bottom p{
+			position: absolute;
+			font-size: 64px;
+			line-height: 72px;
+			font-weight: bold;
+			text-align: center;
+			margin: 0 1%;
+			width: 98%;
+		}
+		.slide img{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.slide.img_center{
+			background-color: black;
+		}
+		.slide.img_center img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: .75;
+		}
+		.slide.img_center div{
+			opacity: .75;
+		}
+		.slide.img_center p{
+			color: white;
+			text-shadow:0px 0px 10px #000000;
+		}
+		.slide.img_top p{
+			margin-top: 15px;
+		}
+		.slide.img_top p.title{
+			font-size: 84px;
+		}
+
+		a.citation{
+			position: absolute;
+			bottom: 5px;
+			right: 5px;
+			color: #000;
+			background-color: rgba(255,255,255,.75);
+		}
+
+		.code{
+			font-family: 'Courier New';
+		}
+	</style>
+</head>
+<body>
+
+<div class="slide img_top">
+	<img src="images/mapquest_tiles.png"/>
+	<p class="title">Better Know a Slippy Map</p>
+	<a class="citation" href="http://github.com/maptimeboston">Maptime Boston</a>
+</div>
+
+<div class="slide img_center">
+	<img src="images/mapquest_tiles.png"/>
+	<p>1.<br/>A "slippy map" is usually made of tiles.</p>
+</div>
+
+<div class="slide img_center">
+	<img src="images/tile_loading.gif"/>
+	<p>Tiling chops the map into pieces to quickly load only the part of the map in view.</p>
+	<a class="citation" href="http://maps.stamen.com/">maps.stamen.com</a>
+</div>
+
+<div class="slide img_center">
+	<img src="images/various_tiles.jpg"/>
+	<p>2.<br/>(Almost) all tiles are created equal.</p>
+	<a class="citation" href="http://www.openwhatevermap.org/">openwhatevermap.org</a>
+</div>
+
+<div class="slide img_top">
+	<img src="images/tiles.gif"/>
+	<p>256 x 256 pixels.<br/>
+		Standardized locations.</p>
+</div>
+
+<div class="slide heading">
+	<p>zoom, x, y<br/><br/>
+		e.g. .../14/4955/6059.png</p>
+</div>
+
+<div class="slide heading">
+	<p>Number of tiles at zoom level <em>z</em>:<br/>
+		2<sup>2z</sup></p>
+</div>
+
+<div class="slide img">
+	<img src="images/zoom2.jpg"/>
+</div>
+
+<div class="slide img">
+	<img src="images/zoom3.jpg"/>
+</div>
+
+<div class="slide heading">
+	<p>At the resolution of my computer, a world map at zoom 21 would be nearly 78 miles square!</p>
+</div>
+
+<div class="slide">
+	<iframe width="100%" height="95%" frameborder="0" src="tiles.html"></iframe>
+</div>
+
+<div class="slide img_center">
+	<img src="images/mercator_1569.jpg"/>
+	<p>3. Tiled web maps use the Mercator projection.</p>
+	<a class="citation" href="http://en.wikipedia.org/wiki/Mercator_projection#mediaviewer/File:Mercator_1569.png">Wikipedia</a>
+</div>
+
+<div class="slide heading">
+	<p>The math is simple!<br/><br/>
+		x = λ<br/>
+		y = ln(tan φ + sec φ)
+	</p>
+</div>
+
+<div class="slide img_bottom">
+	<img src="images/mercator_rhumb.jpg"/>
+	<p>Mercator's map was designed for marine navigation. Lines of constant bearing are straight.</p>
+</div>
+
+<div class="slide img_bottom">
+	<img src="images/directions.jpg"/>
+	<p>At a local scale, this means that shape and direction are preserved.</p>
+</div>
+
+<div class="slide img_top">
+	<img src="images/squish.jpg"/>
+	<p>And that's generally a good thing.</p>
+	<a class="citation" href="http://idvux.wordpress.com/2007/06/06/mercator-vs-well-not-mercator-platte-carre/">John Nelson, Plate carrée squish effect</a>
+</div>
+
+<div class="slide img_center">
+	<img src="images/world.jpg"/>
+	<p>4.<br/>A Mercator map of the world is not a map of the world.</p>
+</div>
+
+<div class="slide heading">
+	<p>ln(tan 90&#176; + sec 90&#176;) = Infinity</p>
+</div>
+
+<div class="slide img">
+	<img src="images/poles.gif"/>
+</div>
+
+<div class="slide img">
+	<img src="images/world_cutoff.jpg"/>
+</div>
+
+<div class="slide img_center">
+	<img src="images/suspicious.jpg"/>
+	<p>5.<br/>Be suspicious of web map comparisons "at the same scale."</p>
+</div>
+
+<div class="slide">
+	<iframe width="100%" height="95%" frameborder="0" src="https://gmaps-samples.googlecode.com/svn/trunk/poly/puzzledrag.html"></iframe>
+</div>
+
+<div class="slide heading">
+	<p>ZOOM LEVEL &#8800; SCALE</p>
+</div>
+
+<div class="slide img">
+	<img src="images/quito.jpg"/>
+</div>
+
+<div class="slide img">
+	<img src="images/oslo.jpg"/>
+</div>
+
+<div class="slide img">
+	<img src="images/z16.jpg"/>
+</div>
+
+<div class="slide img_center">
+	<img src="images/drawing.jpg"/>
+	<p>6.<br/>You can make your own tiles!</p>
+</div>
+
+<script>
+	var slides = document.getElementsByClassName("slide"),
+		current = 0;
+
+	function go(n){
+		current = n;
+		var slide = slides[n],
+			classes = slide.className.split(" ");
+		for (var i = 0; i < slides.length; i++) slides[i].style.display = 'none';
+		slide.style.display = 'block';
+
+		if ( classes[1] && styleSlide[classes[1]] ) styleSlide[classes[1]](slide);
+
+		if (window.location.hash !== n) window.location.hash = n;
+	}
+
+	var styleSlide = {
+		heading: function(slide){
+			var p = slide.getElementsByTagName("p")[0];
+			p.style.marginTop = (slide.offsetHeight - p.offsetHeight) / 2 + "px";
+		},
+
+		img: function(slide){
+			var img = slide.getElementsByTagName("img")[0];
+	        slide.style.backgroundImage = 'url(' + img.src + ')';
+	        img.style.display = 'none';
+		},
+
+		img_center: function(slide){
+			var img = slide.getElementsByTagName("img")[0];
+			var div = slide.getElementsByTagName("div")[0] || document.createElement("div");
+			div.style.backgroundImage = 'url(' + img.src + ')';
+			slide.appendChild(div);
+	        img.style.display = 'none';
+			var p = slide.getElementsByTagName("p")[0];
+			p.style.marginTop = (slide.offsetHeight - p.offsetHeight) / 2 + "px";
+			slide.appendChild(p);
+		},
+
+		img_top: function(slide){
+			var img = slide.getElementsByTagName("img")[0];
+	        slide.style.backgroundImage = 'url(' + img.src + ')';
+	        img.style.display = 'none';
+		},
+
+		img_bottom: function(slide){
+			var img = slide.getElementsByTagName("img")[0];
+	        slide.style.backgroundImage = 'url(' + img.src + ')';
+	        img.style.display = 'none';
+		}
+	}
+
+	document.onclick = function() { go(++current % (slides.length)); };
+    function fwd() { go(Math.min(slides.length - 1, ++current)); }
+    function rev() { go(Math.max(0, --current)); }
+    document.onkeydown = function(e) {
+        if (e.which === 39 || e.which === 34 || e.which === 40) fwd();
+        if (e.which === 37 || e.which === 33 || e.which === 38) rev();
+    };
+    document.ontouchstart = function(e) {
+        var x0 = e.changedTouches[0].pageX;
+        document.ontouchend = function(e) {
+            var x1 = e.changedTouches[0].pageX;
+            if (x1 - x0 < 0) fwd();
+            if (x1 - x0 > 0) rev();
+        };
+    };
+
+    function parse_hash() {
+        return Math.max(Math.min(slides.length - 1,
+            parseInt(window.location.hash.substring(1), 10)), 0);
+    }
+    if (window.location.hash) current = parse_hash() || current;
+    window.onhashchange = function() {
+        var c = parse_hash();
+        if (c !== current) go(c);
+    };
+    go(current);
+</script>
+
+</body>
+</html>
