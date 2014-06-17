@@ -2,11 +2,13 @@
 <meta charset="utf-8">
 <html>
 <head>
+	<title>Better Know a Slippy Map</title>
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 	<style>
 		html, body{
 			margin: 0;
 			font: 20px/24px "PT Sans", sans-serif;
+			background-color: #d1c9b8;
 		}
 		.slide, .slide div{
 			position: absolute;
@@ -47,7 +49,7 @@
 			opacity: .75;
 		}
 		.slide.img_center div{
-			opacity: .75;
+			opacity: .5;
 		}
 		.slide.img_center p{
 			color: white;
@@ -58,6 +60,15 @@
 		}
 		.slide.img_top p.title{
 			font-size: 84px;
+		}
+
+		a{
+			color: #669;
+			text-decoration: none;
+		}
+
+		a:hover{
+			text-decoration: underline;
 		}
 
 		a.citation{
@@ -82,7 +93,7 @@
 </div>
 
 <div class="slide img_center">
-	<img src="images/mapquest_tiles.png"/>
+	<img src="images/mapquest_tiles2.png"/>
 	<p>1.<br/>A "slippy map" is usually made of tiles.</p>
 </div>
 
@@ -132,7 +143,7 @@
 
 <div class="slide img_center">
 	<img src="images/mercator1569.jpg"/>
-	<p>3. Tiled web maps use the Mercator projection.</p>
+	<p>3.<br/>Tiled web maps use the Mercator projection.</p>
 	<a class="citation" href="http://en.wikipedia.org/wiki/Mercator_projection#mediaviewer/File:Mercator_1569.png">Wikipedia</a>
 </div>
 
@@ -201,12 +212,36 @@
 	<img src="images/z16.jpg"/>
 </div>
 
+<div class="slide img_top">
+	<img src="images/mercator_choro.jpg"/>
+	<p>So avoid areal representations in web maps at small scale.</p>
+</div>
+
 <div class="slide img_center">
 	<img src="images/drawing.jpg"/>
 	<p>6.<br/>You can make your own tiles!</p>
 </div>
 
+<div class="slide heading">
+	<p>Design in <a href="https://www.mapbox.com/tilemill/">TileMill</a>
+		<br/><br/>Host on <a href="http://mapbox.com">Mapbox</a> or on your own:
+		<br/><br/><a href="https://github.com/klokantech/tileserver-php/">TileServer.php</a>, <a href="http://tilestache.org/">TileStache</a>, <a href="http://tilecache.org/">TileCache</a>, <a href="https://github.com/mapbox/tilestream">TileStream</a>,<br/><a href="https://github.com/chelm/mbtiles-server">mbtiles-server</a>, <a href="http://wiki.openstreetmap.org/wiki/Mod_tile%22">mod_tile</a></p>
+</div>
+
+<div class="slide heading">
+	<p>Or just use nice existing tiles!<br/><br/>
+		<a href="http://wiki.openstreetmap.org/wiki/Tiles">OpenStreetMap</a>, <a href="http://maps.stamen.com/">Stamen</a>,<br/><a href="https://www.mapbox.com/tour/#maps">Mapbox</a>, <a href="http://developer.mapquest.com/web/products/open/map">MapQuest</a></p>
+</div>
+
+<div class="slide img_center">
+	<img src="images/anatomy.jpg"/>
+	<p>Thanks to Alan McConchie, Beth Schechter, and the Maptime team for much of this material!</p>
+	<a class="citation" href="https://github.com/maptime/anatomy-of-a-web-map">Anatomy of a Web Map</a>
+</div>
+
 <script>
+	// The following is mostly derived from https://github.com/tmcw/big
+
 	var slides = document.getElementsByClassName("slide"),
 		current = 0;
 
@@ -216,6 +251,9 @@
 			classes = slide.className.split(" ");
 		for (var i = 0; i < slides.length; i++) slides[i].style.display = 'none';
 		slide.style.display = 'block';
+
+	slide.style.left = (window.innerWidth - slide.offsetWidth) / 2 + "px";
+	slide.style.top = (window.innerHeight - slide.offsetHeight) / 2 + "px";
 
 		if ( classes[1] && styleSlide[classes[1]] ) styleSlide[classes[1]](slide);
 
@@ -236,13 +274,12 @@
 
 		img_center: function(slide){
 			var img = slide.getElementsByTagName("img")[0];
+			var p = slide.getElementsByTagName("p")[0];
 			var div = slide.getElementsByTagName("div")[0] || document.createElement("div");
 			div.style.backgroundImage = 'url(' + img.src + ')';
-			slide.appendChild(div);
+			slide.insertBefore(div,p);
 	        img.style.display = 'none';
-			var p = slide.getElementsByTagName("p")[0];
 			p.style.marginTop = (slide.offsetHeight - p.offsetHeight) / 2 + "px";
-			slide.appendChild(p);
 		},
 
 		img_top: function(slide){
