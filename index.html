@@ -2,9 +2,30 @@
 <meta charset="utf-8">
 <html>
 <head>
-	<title>Better Know a Slippy Map</title>
+	<title>Get to Know a Web Map</title>
 	<link target="_blank" href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 	<style>
+
+		/*
+			SLIDE STYLES:
+			All slides are assumed to contain one 'p' element, one 'img' element, or one of each.
+
+			<div class="slide">
+				-- Default style. If no image, text is centered. If image present, it is centered and text is at the top.
+				-- Arbitrary content could go here too (e.g. I used a couple of iframes), but default behavior will mess with any p or img elements.
+
+			<div class="slide image_full">
+				-- Full 1024x768 img, somewhat faded to black and with bold white text (p) centered on top.
+
+			<div class="slide image_bottom">
+				-- Mostly like default except that image appears at the bottom. (Basically just to give more room for longer text).
+			
+			Can make additional class styles for p elements and such if you need different text sizes, colors, etc.
+			(e.g. there is a p.title style with a bigger font)
+
+			img elements themselves are not displayed; rather, their src attributes are applied as div backgrounds. This is to make centering easier, basically.
+		*/
+
 		html, body{
 			margin: 0;
 			font: 20px/24px "PT Sans", sans-serif;
@@ -21,44 +42,35 @@
 		}
 		.slide{
 			background-color: #d1c9b8;
+			
 		}
-		.slide.img_bottom{
+		.slide.image_bottom{
 			background-position: center bottom;
 		}
-		.slide.heading p, .slide.img_center p, .slide.img_top p, .slide.img_bottom p{
+		.slide p{
 			position: absolute;
 			font-size: 64px;
 			line-height: 72px;
 			font-weight: bold;
 			text-align: center;
-			margin: 0 1%;
+			margin: 15px 1% 0 1%;
 			width: 98%;
 		}
 		.slide img{
-			position: absolute;
-			top: 0;
-			left: 0;
+			display: none;
 		}
-		.slide.img_center{
+		.slide.image_full{
 			background-color: black;
 		}
-		.slide.img_center img{
-			position: absolute;
-			top: 0;
-			left: 0;
-			opacity: .75;
-		}
-		.slide.img_center div{
+		
+		.slide.image_full div{
 			opacity: .5;
 		}
-		.slide.img_center p{
+		.slide.image_full p{
 			color: white;
 			text-shadow:0px 0px 10px #000000;
 		}
-		.slide.img_top p{
-			margin-top: 15px;
-		}
-		.slide.img_top p.title{
+		.slide p.title{
 			font-size: 84px;
 		}
 
@@ -86,60 +98,60 @@
 </head>
 <body>
 
-<div class="slide img_top">
+<div class="slide">
 	<img src="images/mapquest_tiles.png"/>
-	<p class="title">Better Know a Slippy Map</p>
-	<a class="citation" target="_blank" href="http://github.com/maptimeboston">Andy Woodruff for Maptime Boston</a>
+	<p class="title">Get to Know a Web Map</p>
+	<a class="citation" target="_blank" href="http://github.com/maptimeboston">Mike Foster and Andy Woodruff for Maptime Boston</a>
 </div>
 
-<div class="slide img_center">
+<div class="slide image_full">
 	<img src="images/mapquest_tiles2.png"/>
 	<p>1.<br/>A "slippy map" is usually made of tiles.</p>
 </div>
 
-<div class="slide img_center">
+<div class="slide image_full">
 	<img src="images/tile_loading.gif"/>
 	<p>Tiling chops the map into pieces to quickly load only the part of the map in view.</p>
 	<a class="citation" target="_blank" href="http://maps.stamen.com/">maps.stamen.com</a>
 </div>
 
-<div class="slide img_bottom">
+<div class="slide image_bottom">
 	<img src="images/tile_pixels.png"/>
 	<p>Tiles are usually pre-rendered raster images, although vector tiles are on the rise.</p>
 </div>
 
-<div class="slide img_center">
+<div class="slide image_full">
 	<img src="images/various_tiles.jpg"/>
 	<p>2.<br/>All (most) tiles are created equal.</p>
 	<a class="citation" target="_blank" href="http://www.openwhatevermap.org/">openwhatevermap.org</a>
 </div>
 
-<div class="slide img_top">
+<div class="slide">
 	<img src="images/tiles.gif"/>
 	<p>256 x 256 pixels.<br/>
 		Standardized locations.<br/>
 		20ish zoom levels.</p>
 </div>
 
-<div class="slide heading">
+<div class="slide">
 	<p>zoom, x, y<br/><br/>
 		e.g. .../14/4955/6059.png</p>
 </div>
 
-<div class="slide img">
+<div class="slide">
 	<img src="images/zoom2.jpg"/>
 </div>
 
-<div class="slide img">
+<div class="slide">
 	<img src="images/zoom3.jpg"/>
 </div>
 
-<div class="slide heading">
+<div class="slide">
 	<p>Number of tiles at zoom level <em>z</em>:<br/>
 		2<sup>2z</sup></p>
 </div>
 
-<div class="slide heading">
+<div class="slide">
 	<p>At the resolution of my computer, a world map at zoom 21 would be nearly 78 miles square!</p>
 	<a class="citation" target="_blank" href="http://msdn.microsoft.com/en-us/library/bb259689.aspx">Bing Maps Tile System</a>
 </div>
@@ -148,57 +160,57 @@
 	<iframe width="100%" height="95%" frameborder="0" src="tiles.html"></iframe>
 </div>
 
-<div class="slide img_center">
+<div class="slide image_full">
 	<img src="images/mercator1569.jpg"/>
 	<p>3.<br/>Tiled web maps use the Mercator projection.</p>
 	<a class="citation" target="_blank" href="http://en.wikipedia.org/wiki/Mercator_projection#mediaviewer/File:Mercator_1569.png">Wikipedia</a>
 </div>
 
-<div class="slide heading">
+<div class="slide">
 	<p>The math is simple!<br/><br/>
 		x = λ<br/>
 		y = ln(tan φ + sec φ)
 	</p>
 </div>
 
-<div class="slide img_bottom">
+<div class="slide image_bottom">
 	<img src="images/mercator_rhumb.jpg"/>
 	<p>Mercator's map was designed for marine navigation. Lines of constant bearing are straight.</p>
 </div>
 
-<div class="slide img_bottom">
+<div class="slide image_bottom">
 	<img src="images/directions.jpg"/>
 	<p>At a local scale, this means that shape and direction are preserved.</p>
 </div>
 
-<div class="slide img_top">
+<div class="slide">
 	<img src="images/squish.jpg"/>
 	<p>And that's generally a good thing.</p>
 	<a class="citation" target="_blank" href="http://idvux.wordpress.com/2007/06/06/mercator-vs-well-not-mercator-platte-carre/">John Nelson, Plate carrée squish effect</a>
 </div>
 
-<div class="slide img_center">
+<div class="slide image_full">
 	<img src="images/world.jpg"/>
 	<p>4.<br/>A Mercator map of the world is not a map of the world.</p>
 </div>
 
-<div class="slide heading">
+<div class="slide">
 	<p>ln(tan 90&#176; + sec 90&#176;) = Infinity</p>
 </div>
 
-<div class="slide img">
+<div class="slide">
 	<img src="images/poles.gif"/>
 </div>
 
-<div class="slide img">
+<div class="slide">
 	<img src="images/world_cutoff.jpg"/>
 </div>
 
-<div class="slide img">
+<div class="slide">
 	<img src="images/southpole.jpg"/>
 </div>
 
-<div class="slide img_center">
+<div class="slide image_full">
 	<img src="images/suspicious.jpg"/>
 	<p>5.<br/>Be suspicious of web map comparisons "at the same scale."</p>
 </div>
@@ -207,44 +219,44 @@
 	<iframe width="100%" height="95%" frameborder="0" src="https://gmaps-samples.googlecode.com/svn/trunk/poly/puzzledrag.html"></iframe>
 </div>
 
-<div class="slide heading">
+<div class="slide">
 	<p>ZOOM LEVEL &#8800; SCALE</p>
 </div>
 
-<div class="slide img">
+<div class="slide">
 	<img src="images/quito.jpg"/>
 </div>
 
-<div class="slide img">
+<div class="slide">
 	<img src="images/oslo.jpg"/>
 </div>
 
-<div class="slide img">
+<div class="slide">
 	<img src="images/z16.jpg"/>
 </div>
 
-<div class="slide img_top">
+<div class="slide">
 	<img src="images/mercator_choro.jpg"/>
 	<p>So avoid areal representations in web maps at small scale.</p>
 </div>
 
-<div class="slide img_center">
+<div class="slide image_full">
 	<img src="images/drawing.jpg"/>
 	<p>6.<br/>You can make your own tiles!</p>
 </div>
 
-<div class="slide heading">
+<div class="slide">
 	<p>Design in <a target="_blank" href="https://www.mapbox.com/tilemill/">TileMill</a>
 		<br/><br/>Host on <a target="_blank" href="http://mapbox.com">Mapbox</a> or on your own:
 		<br/><br/><a target="_blank" href="https://github.com/klokantech/tileserver-php/">TileServer.php</a>, <a target="_blank" href="http://tilestache.org/">TileStache</a>, <a target="_blank" href="http://tilecache.org/">TileCache</a>, <a target="_blank" href="https://github.com/mapbox/tilestream">TileStream</a>,<br/><a target="_blank" href="https://github.com/chelm/mbtiles-server">mbtiles-server</a>, <a target="_blank" href="http://wiki.openstreetmap.org/wiki/Mod_tile%22">mod_tile</a></p>
 </div>
 
-<div class="slide heading">
+<div class="slide">
 	<p>Or just use nice existing tiles!<br/><br/>
 		<a target="_blank" href="http://wiki.openstreetmap.org/wiki/Tiles">OpenStreetMap</a>, <a target="_blank" href="http://maps.stamen.com/">Stamen</a>,<br/><a target="_blank" href="https://www.mapbox.com/tour/#maps">Mapbox</a>, <a target="_blank" href="http://developer.mapquest.com/web/products/open/map">MapQuest</a></p>
 </div>
 
-<div class="slide img_center">
+<div class="slide image_full">
 	<img src="images/anatomy.jpg"/>
 	<p>Thanks to Alan McConchie, Beth Schechter, and the Maptime team for much of this material!</p>
 	<a class="citation" target="_blank" href="https://github.com/maptime/anatomy-of-a-web-map">Anatomy of a Web Map</a>
@@ -267,6 +279,8 @@
 	slide.style.top = (window.innerHeight - slide.offsetHeight) / 2 + "px";
 
 		if ( classes[1] && styleSlide[classes[1]] ) styleSlide[classes[1]](slide);
+		else styleSlide.normal(slide);
+		resize();
 
 		if (window.location.hash !== n) window.location.hash = n;
 	}
@@ -283,7 +297,7 @@
 	        img.style.display = 'none';
 		},
 
-		img_center: function(slide){
+		image_full: function(slide){
 			var img = slide.getElementsByTagName("img")[0];
 			var p = slide.getElementsByTagName("p")[0];
 			var div = slide.getElementsByTagName("div")[0] || document.createElement("div");
@@ -303,6 +317,19 @@
 			var img = slide.getElementsByTagName("img")[0];
 	        slide.style.backgroundImage = 'url(' + img.src + ')';
 	        img.style.display = 'none';
+		},
+
+		normal: function(slide){
+			var img = slide.getElementsByTagName("img")[0];
+			var p = slide.getElementsByTagName("p")[0];
+
+			if ( img ){
+				slide.style.backgroundImage = 'url(' + img.src + ')';
+			} else {
+				if ( p ){
+					p.style.marginTop = (slide.offsetHeight - p.offsetHeight) / 2 + "px";
+				}
+			}
 		}
 	}
 
@@ -331,6 +358,15 @@
         var c = parse_hash();
         if (c !== current) go(c);
     };
+    window.onresize = resize;
+
+    function resize(){
+    	var s = Math.min( 1, Math.min( window.innerHeight / 768, window.innerWidth / 1024 ) );
+    		slides[current].style.webkitTransform = "scale(" + s + "," + s +")";
+			slides[current].style.MozTransform = "scale(" + s + "," + s +")";
+			slides[current].style.msTransform = "scale(" + s + "," + s +")";
+			slides[current].style.transform = "scale(" + s + "," + s +")";
+    }
     go(current);
 </script>
 
