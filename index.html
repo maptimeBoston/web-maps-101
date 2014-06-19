@@ -280,6 +280,7 @@
 
 		if ( classes[1] && styleSlide[classes[1]] ) styleSlide[classes[1]](slide);
 		else styleSlide.normal(slide);
+		resize();
 
 		if (window.location.hash !== n) window.location.hash = n;
 	}
@@ -357,6 +358,15 @@
         var c = parse_hash();
         if (c !== current) go(c);
     };
+    window.onresize = resize;
+
+    function resize(){
+    	var s = Math.min( 1, Math.min( window.innerHeight / 768, window.innerWidth / 1024 ) );
+    		slides[current].style.webkitTransform = "scale(" + s + "," + s +")";
+			slides[current].style.MozTransform = "scale(" + s + "," + s +")";
+			slides[current].style.msTransform = "scale(" + s + "," + s +")";
+			slides[current].style.transform = "scale(" + s + "," + s +")";
+    }
     go(current);
 </script>
 
