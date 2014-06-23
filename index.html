@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <html>
 <head>
-	<title>Get to Know a Web Map</title>
+	<title>Hello, Web Maps</title>
 	<link target="_blank" href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 	<style>
 
@@ -70,8 +70,12 @@
 			color: white;
 			text-shadow:0px 0px 10px #000000;
 		}
+		.slide.image_full.repeat div{
+			background-position: 0 0;
+			background-repeat: repeat;
+		}
 		.slide p.title{
-			font-size: 84px;
+			font-size: 120px;
 		}
 
 		a{
@@ -99,14 +103,70 @@
 <body>
 
 <div class="slide">
-	<img src="images/mapquest_tiles.png"/>
-	<p class="title">Get to Know a Web Map</p>
+	<p class="title">Hello, Web Maps!</p>
 	<a class="citation" target="_blank" href="http://github.com/maptimeboston">Mike Foster and Andy Woodruff for Maptime Boston</a>
 </div>
 
 <div class="slide image_full">
+	<img src="images/anatomy.jpg"/>
+	<p>FIRST: Thanks to Alan McConchie, Beth Schechter, and the Maptime team for much of this material!</p>
+	<a class="citation" target="_blank" href="https://github.com/maptime/anatomy-of-a-web-map">Anatomy of a Web Map</a>
+</div>
+
+<div class="slide">
+	<p>Follow along! <a target="_blank" href="http://maptimeboston.github.io/better-know-a-slippy-map" style="font-size:36px">http://maptimeboston.github.io/better-know-a-slippy-map</a></p>
+</div>
+
+<div class="slide image_full">
+	<img src="images/web.jpg"/>
+	<p>What is a web map?</p>
+</div>
+
+<div class="slide">
+	<p>"Web map" often implies a map that is not simply <em>on</em> the web, but rather one that is <em>powered by</em> the web.</p>
+</div>
+
+<div class="slide">
+	<p>A <em>digital map</em> is on a computer, but may not be accessible by internet, and is relatively static if it is.</p>
+</div>
+
+<div class="slide">
+	<img src="images/bus_digital.jpg"/>
+	<a class="citation" target="_blank" href="http://bostonography.com/2013/live-mbta-bus-speeds/">bostonography</a>
+</div>
+
+<div class="slide">
+	<p>A <em>web map</em> depends on the internet. It is usually interactive and not always self-contained.</p>
+</div>
+
+<div class="slide">
+	<iframe width="100%" height="95%" frameborder="0" src="http://bostonography.com/bus"></iframe>
+	<a class="citation" target="_blank" href="http://bostonography.com/bus">bostonography</a>
+</div>
+
+<div class="slide">
+	<img src="images/geocoding_mapquest.gif"/>
+	<p>MapQuest ruled the early days of web maps</p>
+</div>
+
+<div class="slide">
+	<img src="images/gmaps_xmas.jpg"/>
+	<p>Enter Google, 2005</p>
+</div>
+
+<div class="slide image_bottom">
+	<p>Google Maps pioneered what is now sometimes called a "slippy map"</p>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d94411.73947848764!2d-71.05715705!3d42.31337345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3652d0d3d311b%3A0x787cbf240162e8a0!2sBoston%2C+MA!5e0!3m2!1sen!2sus!4v1403529313730" width="1024" height="500" frameborder="0" style="border:0; position: absolute; bottom: 0"></iframe>
+</div>
+
+<div class="slide image_full repeat">
+	<img src="images/banana.gif"/>
+	<p>So how does a "slippy map" work?</p>
+</div>
+
+<div class="slide image_full">
 	<img src="images/mapquest_tiles2.png"/>
-	<p>1.<br/>A "slippy map" is usually made of tiles.</p>
+	<p>A "slippy map" is usually made of tiles.</p>
 </div>
 
 <div class="slide image_full">
@@ -122,7 +182,7 @@
 
 <div class="slide image_full">
 	<img src="images/various_tiles.jpg"/>
-	<p>2.<br/>All (most) tiles are created equal.</p>
+	<p>All (most) tiles are created equal.</p>
 	<a class="citation" target="_blank" href="http://www.openwhatevermap.org/">openwhatevermap.org</a>
 </div>
 
@@ -148,7 +208,7 @@
 
 <div class="slide">
 	<p>Number of tiles at zoom level <em>z</em>:<br/>
-		2<sup>2z</sup></p>
+		2<sup>z</sup> x 2<sup>z</sup> = 4<sup>z</sup></p>
 </div>
 
 <div class="slide">
@@ -162,7 +222,7 @@
 
 <div class="slide image_full">
 	<img src="images/mercator1569.jpg"/>
-	<p>3.<br/>Tiled web maps use the Mercator projection.</p>
+	<p>Tiled web maps use the Mercator projection.</p>
 	<a class="citation" target="_blank" href="http://en.wikipedia.org/wiki/Mercator_projection#mediaviewer/File:Mercator_1569.png">Wikipedia</a>
 </div>
 
@@ -191,7 +251,7 @@
 
 <div class="slide image_full">
 	<img src="images/world.jpg"/>
-	<p>4.<br/>A Mercator map of the world is not a map of the world.</p>
+	<p>A Mercator map of the world is not a map of the world.</p>
 </div>
 
 <div class="slide">
@@ -212,7 +272,7 @@
 
 <div class="slide image_full">
 	<img src="images/suspicious.jpg"/>
-	<p>5.<br/>Be suspicious of web map comparisons "at the same scale."</p>
+	<p>Be suspicious of web map comparisons "at the same scale."</p>
 </div>
 
 <div class="slide">
@@ -240,7 +300,32 @@
 	<p>So avoid areal representations in web maps at small scale.</p>
 </div>
 
+<div class="slide">
+	<img src="images/osm_tile.png"/>
+	<p>Tiles, typically: raster, non-interactive<a href="https://www.mapbox.com/blog/how-interactivity-works-utfgrid/" target="_blank">*</a>, used as a base layer</p>
+</div>
+
+<div class="slide">
+	<p>Feature layers, typically: interactive, vector, represent the map's salient data</p>
+	<iframe src="http://leafletjs.com/examples/quick-start-example.html" scrolling="no" frameborder="0" width="600" height="400" style="position:absolute;bottom:100px;left:212px"></iframe>
+</div>
+
+<div class="slide">
+	<p><a href="http://en.wikipedia.org/wiki/GeoJSON" target="_blank">GeoJSON</a> is a geographic data format that plays well with web maps</p>
+	<img src="images/geojson.png"/>
+</div>
+
 <div class="slide image_full">
+	<p>How does all this fit together?</p>
+	<img src="images/puzzle.jpg"/>
+</div>
+
+<div class="slide">
+	<img src="images/diagram.jpg"/>
+</div>
+
+
+<!--div class="slide image_full">
 	<img src="images/drawing.jpg"/>
 	<p>6.<br/>You can make your own tiles!</p>
 </div>
@@ -254,13 +339,7 @@
 <div class="slide">
 	<p>Or just use nice existing tiles!<br/><br/>
 		<a target="_blank" href="http://wiki.openstreetmap.org/wiki/Tiles">OpenStreetMap</a>, <a target="_blank" href="http://maps.stamen.com/">Stamen</a>,<br/><a target="_blank" href="https://www.mapbox.com/tour/#maps">Mapbox</a>, <a target="_blank" href="http://developer.mapquest.com/web/products/open/map">MapQuest</a></p>
-</div>
-
-<div class="slide image_full">
-	<img src="images/anatomy.jpg"/>
-	<p>Thanks to Alan McConchie, Beth Schechter, and the Maptime team for much of this material!</p>
-	<a class="citation" target="_blank" href="https://github.com/maptime/anatomy-of-a-web-map">Anatomy of a Web Map</a>
-</div>
+</div -->
 
 <script>
 	// The following is mostly derived from https://github.com/tmcw/big
@@ -313,8 +392,9 @@
 	        img.style.display = 'none';
 		},
 
-		img_bottom: function(slide){
+		image_bottom: function(slide){
 			var img = slide.getElementsByTagName("img")[0];
+			if ( !img ) return;
 	        slide.style.backgroundImage = 'url(' + img.src + ')';
 	        img.style.display = 'none';
 		},
@@ -325,7 +405,7 @@
 
 			if ( img ){
 				slide.style.backgroundImage = 'url(' + img.src + ')';
-			} else {
+			} else if (!img && !slide.getElementsByTagName("iframe")[0]){
 				if ( p ){
 					p.style.marginTop = (slide.offsetHeight - p.offsetHeight) / 2 + "px";
 				}
