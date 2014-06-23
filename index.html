@@ -58,11 +58,12 @@
 		}
 		.slide li{
 			top: 250px;
+			left: 250px;
 			position: relative;
 			font-size: 64px;
 			line-height: 72px;
 			font-weight: bold;
-			text-align: center;
+			text-align: left;
 			margin: 15px 1% 0 1%;
 			width: 98%;
 		}
@@ -279,14 +280,7 @@
 
 <div class="slide">
 	<p>Cartographers do this.<br/>
-	<img src="images/cartographers-do.png"/></p>
-	<a class="citation" target="_blank" href="http://www.bostonography.com">Bostonography</a>
-</div>
-
-<div class="slide">
-	<p>Machines do this.<br/>
-	<img src="images/machines-do.png"/></p>
-	<a class="citation" target="_blank" href="http://cartastrophe.wordpress.com/2011/02/03/assaulted-by-amoebae/">Appendix W of Wisconsin Public Service Commission filing 9554-CE-100</a>
+	<img src="images/john-snow.jpg"/></p>
 </div>
 
 <div class="slide image_full">
@@ -294,10 +288,10 @@
 	<img src="http://cbsfwbam.files.wordpress.com/2013/02/movie-audience-3d-glasses.jpg?w=620&h=349&crop=1"/></p>
 </div>
 
-<div class="slide image-full">
-	<p> </br>Data matters!<br/>
-		<em>Spend the time upfront working on your data.</em><br/>
-	<img src="images/outside-the-shapefile.png"/></p>
+<div class="slide">
+	<p>Data matters!<br>
+		<em>Spend the time upfront working on your data.</em><br>
+	</p>
 </div>
 
 <div class="slide">
@@ -308,30 +302,51 @@
 	</p>
 </div>
 
-<div class="slide image-full">
-	<p> </br>Data Considerations<br>
-		<li>Points, Lines, Polygon, Raster</li>
-		<li>Dynamic, Interactive</li>
-		<li>Level of Interactivity</li>
+<div class="slide">
+	<p>Data Considerations</p>
+</div>
+
+<div class="slide">
+	<p>
+		What layers can you interact with?
 	</p>
 </div>
 
 <div class="slide">
+	<p>
+		What layers are static and won't change?
+	</p>
+</div>
+
+<div class="slide">
+	<p>
+		Is your data static or dynamic?
+	</p>
+</div>
+
+<div class="slide">
+	<p>
+		What format will you keep it in?
+	</p>
+</div>
+
+<div class="slide image_full">
 	<p>The Basemap<br/>Do you want a custom basemap?<br/>Or is Google OK?<br>
-	<img src="images/sublime.png"/></p>
+	<img src="images/googlemap.png"/></p>
 </div>
 
 <div class="slide">
 	<p>Hosting<br>
-	<img src="images/sublime.png"/></p>
+		Where are you going to put your map?<br>
+	<img src="images/directory.png"/></p>
 </div>
 
-<div class="slide">
+<div class="slide image_full">
 	<p>Coding<br>
 		HTML<br>
 		CSS<br>
 		Javascript<br>
-	<img src="images/sublime.png"/></p>
+	<img src="images/snippet.png"/></p>
 </div>
 
 <div class="slide">
@@ -352,6 +367,7 @@
 	var slides = document.getElementsByClassName("slide"),
 		current = 0;
 
+	// I have no idea what this function does.
 	function go(n){
 		current = n;
 		var slide = slides[n],
