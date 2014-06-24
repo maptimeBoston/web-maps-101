@@ -56,16 +56,15 @@
 			margin: 15px 1% 0 1%;
 			width: 98%;
 		}
-		.slide li{
+		.slide ul{
 			top: 250px;
 			left: 250px;
-			position: relative;
+			position: absolute;
 			font-size: 64px;
 			line-height: 72px;
 			font-weight: bold;
 			text-align: left;
-			margin: 15px 1% 0 1%;
-			width: 98%;
+			margin: 0;
 		}
 		.slide img{
 			display: none;
@@ -372,11 +371,11 @@
 </div>
 
 <div class="slide">
-	<p>
+	<ul>
 		<li>Standardized</li>
 		<li>Normalized</li>
 		<li>Organized</li>
-	</p>
+	</ul>
 </div>
 
 <div class="slide">
@@ -550,12 +549,6 @@
 			p.style.marginTop = (slide.offsetHeight - p.offsetHeight) / 2 + "px";
 		},
 
-		img: function(slide){
-			var img = slide.getElementsByTagName("img")[0];
-	        slide.style.backgroundImage = 'url(' + img.src + ')';
-	        img.style.display = 'none';
-		},
-
 		image_full: function(slide){
 			var img = slide.getElementsByTagName("img")[0];
 			var p = slide.getElementsByTagName("p")[0];
@@ -564,12 +557,6 @@
 			slide.insertBefore(div,p);
 	        img.style.display = 'none';
 			p.style.marginTop = (slide.offsetHeight - p.offsetHeight) / 2 + "px";
-		},
-
-		img_top: function(slide){
-			var img = slide.getElementsByTagName("img")[0];
-	        slide.style.backgroundImage = 'url(' + img.src + ')';
-	        img.style.display = 'none';
 		},
 
 		image_bottom: function(slide){
