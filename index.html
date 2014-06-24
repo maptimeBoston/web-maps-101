@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <html>
 <head>
-	<title>Get to Know a Web Map</title>
+	<title>Hello, Web Maps</title>
 	<link target="_blank" href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 	<style>
 
@@ -81,8 +81,12 @@
 			color: white;
 			text-shadow:0px 0px 10px #000000;
 		}
+		.slide.image_full.repeat div{
+			background-position: 0 0;
+			background-repeat: repeat;
+		}
 		.slide p.title{
-			font-size: 84px;
+			font-size: 120px;
 		}
 
 		a{
@@ -120,6 +124,7 @@
 	<a class="citation" target="_blank" href="http://github.com/maptimeboston">Mike Foster and Andy Woodruff for Maptime Boston</a>
 </div>
 
+
 <div class="slide">
 	<p>Cartographers do this.<br/>
 	<img src="images/john-snow.jpg"/></p>
@@ -129,6 +134,7 @@
 	<p>Who is your audience?<br/><br/>
 	<img src="http://cbsfwbam.files.wordpress.com/2013/02/movie-audience-3d-glasses.jpg?w=620&h=349&crop=1"/></p>
 </div>
+
 
 <div class="slide">
 	<p>Data matters!<br>
@@ -209,6 +215,7 @@
 </div>
 
 <div class="slide image_full">
+<<<<<<< HEAD
 	<p>Other Learning Resources<br>
 		<a target="_blank" href="http://www.w3schools.com">w3schools</a><br/>
 		<a target="_blank" href="http://www.codecademy.com">Codecademy</a><br/>
@@ -245,6 +252,7 @@
 	</p>
 </div>
 
+<<<<<<< HEAD
 <div class="slide image_bottom">
 	<p>
 		<a target="_blank" href="https://cartodb.com/">CartoDB</a><br/>
@@ -302,12 +310,33 @@
 		<br/>
 </div>
 
+<div class="slide image_full">
+	<p>Web maps are more than just tiles.</p>
+	<img src="images/pins.jpg"/>
+</div>
+
+<div class="slide">
+	<p>Dynamic, interactive <em>feature layers</em> are the important other half of many web maps.</p>
+</div>
+
+<div class="slide">
+	<p><a href="http://en.wikipedia.org/wiki/GeoJSON" target="_blank">GeoJSON</a> is a geographic data format that plays well with web maps for feature layers</p>
+	<img src="images/geojson.png"/>
+</div>
+
+
+<div class="slide">
+	<img src="images/diagram.jpg"/>
+</div>
+
+
 <div class="slide">
 	<p>
 		Exploration Session
 	</p>
 </div>
 
+<<<<<<< HEAD
 
 
 
@@ -316,6 +345,7 @@
 	<p>Thanks to Alan McConchie, Beth Schechter, and the Maptime team for much of this material!</p>
 	<a class="citation" target="_blank" href="https://github.com/maptime/anatomy-of-a-web-map">Anatomy of a Web Map</a></p>
 </div>
+
 
 <script>
 	// The following is mostly derived from https://github.com/tmcw/big
@@ -369,8 +399,9 @@
 	        img.style.display = 'none';
 		},
 
-		img_bottom: function(slide){
+		image_bottom: function(slide){
 			var img = slide.getElementsByTagName("img")[0];
+			if ( !img ) return;
 	        slide.style.backgroundImage = 'url(' + img.src + ')';
 	        img.style.display = 'none';
 		},
@@ -381,7 +412,7 @@
 
 			if ( img ){
 				slide.style.backgroundImage = 'url(' + img.src + ')';
-			} else {
+			} else if (!img && !slide.getElementsByTagName("iframe")[0]){
 				if ( p ){
 					p.style.marginTop = (slide.offsetHeight - p.offsetHeight) / 2 + "px";
 				}
