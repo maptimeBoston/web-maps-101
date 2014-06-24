@@ -110,6 +110,164 @@
 <body>
 
 <div class="slide">
+	<img src="images/mapquest_tiles.png"/>
+	<p class="title">Get to Know a Web Map</p>
+	<a class="citation" target="_blank" href="http://github.com/maptimeboston">Mike Foster and Andy Woodruff for Maptime Boston</a>
+</div>
+
+<div class="slide image_full">
+	<img src="images/mapquest_tiles2.png"/>
+	<p>1.<br/>A "slippy map" is usually made of tiles.</p>
+</div>
+
+<div class="slide image_full">
+	<img src="images/tile_loading.gif"/>
+	<p>Tiling chops the map into pieces to quickly load only the part of the map in view.</p>
+	<a class="citation" target="_blank" href="http://maps.stamen.com/">maps.stamen.com</a>
+</div>
+
+<div class="slide image_bottom">
+	<img src="images/tile_pixels.png"/>
+	<p>Tiles are usually pre-rendered raster images, although vector tiles are on the rise.</p>
+</div>
+
+<div class="slide image_full">
+	<img src="images/various_tiles.jpg"/>
+	<p>2.<br/>All (most) tiles are created equal.</p>
+	<a class="citation" target="_blank" href="http://www.openwhatevermap.org/">openwhatevermap.org</a>
+</div>
+
+<div class="slide">
+	<img src="images/tiles.gif"/>
+	<p>256 x 256 pixels.<br/>
+		Standardized locations.<br/>
+		20ish zoom levels.</p>
+</div>
+
+<div class="slide">
+	<p>zoom, x, y<br/><br/>
+		e.g. .../14/4955/6059.png</p>
+</div>
+
+<div class="slide">
+	<img src="images/zoom2.jpg"/>
+</div>
+
+<div class="slide">
+	<img src="images/zoom3.jpg"/>
+</div>
+
+<div class="slide">
+	<p>Number of tiles at zoom level <em>z</em>:<br/>
+		2<sup>2z</sup></p>
+</div>
+
+<div class="slide">
+	<p>At the resolution of my computer, a world map at zoom 21 would be nearly 78 miles square!</p>
+	<a class="citation" target="_blank" href="http://msdn.microsoft.com/en-us/library/bb259689.aspx">Bing Maps Tile System</a>
+</div>
+
+<div class="slide">
+	<iframe width="100%" height="95%" frameborder="0" src="tiles.html"></iframe>
+</div>
+
+<div class="slide image_full">
+	<img src="images/mercator1569.jpg"/>
+	<p>3.<br/>Tiled web maps use the Mercator projection.</p>
+	<a class="citation" target="_blank" href="http://en.wikipedia.org/wiki/Mercator_projection#mediaviewer/File:Mercator_1569.png">Wikipedia</a>
+</div>
+
+<div class="slide">
+	<p>The math is simple!<br/><br/>
+		x = λ<br/>
+		y = ln(tan φ + sec φ)
+	</p>
+</div>
+
+<div class="slide image_bottom">
+	<img src="images/mercator_rhumb.jpg"/>
+	<p>Mercator's map was designed for marine navigation. Lines of constant bearing are straight.</p>
+</div>
+
+<div class="slide image_bottom">
+	<img src="images/directions.jpg"/>
+	<p>At a local scale, this means that shape and direction are preserved.</p>
+</div>
+
+<div class="slide">
+	<img src="images/squish.jpg"/>
+	<p>And that's generally a good thing.</p>
+	<a class="citation" target="_blank" href="http://idvux.wordpress.com/2007/06/06/mercator-vs-well-not-mercator-platte-carre/">John Nelson, Plate carrée squish effect</a>
+</div>
+
+<div class="slide image_full">
+	<img src="images/world.jpg"/>
+	<p>4.<br/>A Mercator map of the world is not a map of the world.</p>
+</div>
+
+<div class="slide">
+	<p>ln(tan 90&#176; + sec 90&#176;) = Infinity</p>
+</div>
+
+<div class="slide">
+	<img src="images/poles.gif"/>
+</div>
+
+<div class="slide">
+	<img src="images/world_cutoff.jpg"/>
+</div>
+
+<div class="slide">
+	<img src="images/southpole.jpg"/>
+</div>
+
+<div class="slide image_full">
+	<img src="images/suspicious.jpg"/>
+	<p>5.<br/>Be suspicious of web map comparisons "at the same scale."</p>
+</div>
+
+<div class="slide">
+	<iframe width="100%" height="95%" frameborder="0" src="https://gmaps-samples.googlecode.com/svn/trunk/poly/puzzledrag.html"></iframe>
+</div>
+
+<div class="slide">
+	<p>ZOOM LEVEL &#8800; SCALE</p>
+</div>
+
+<div class="slide">
+	<img src="images/quito.jpg"/>
+</div>
+
+<div class="slide">
+	<img src="images/oslo.jpg"/>
+</div>
+
+<div class="slide">
+	<img src="images/z16.jpg"/>
+</div>
+
+<div class="slide">
+	<img src="images/mercator_choro.jpg"/>
+	<p>So avoid areal representations in web maps at small scale.</p>
+</div>
+
+<div class="slide image_full">
+	<img src="images/drawing.jpg"/>
+	<p>6.<br/>You can make your own tiles!</p>
+</div>
+
+<div class="slide">
+	<p>Design in <a target="_blank" href="https://www.mapbox.com/tilemill/">TileMill</a>
+		<br/><br/>Host on <a target="_blank" href="http://mapbox.com">Mapbox</a> or on your own:
+		<br/><br/><a target="_blank" href="https://github.com/klokantech/tileserver-php/">TileServer.php</a>, <a target="_blank" href="http://tilestache.org/">TileStache</a>, <a target="_blank" href="http://tilecache.org/">TileCache</a>, <a target="_blank" href="https://github.com/mapbox/tilestream">TileStream</a>,<br/><a target="_blank" href="https://github.com/chelm/mbtiles-server">mbtiles-server</a>, <a target="_blank" href="http://wiki.openstreetmap.org/wiki/Mod_tile%22">mod_tile</a></p>
+</div>
+
+<div class="slide">
+	<p>Or just use nice existing tiles!<br/><br/>
+		<a target="_blank" href="http://wiki.openstreetmap.org/wiki/Tiles">OpenStreetMap</a>, <a target="_blank" href="http://maps.stamen.com/">Stamen</a>,<br/><a target="_blank" href="https://www.mapbox.com/tour/#maps">Mapbox</a>, <a target="_blank" href="http://developer.mapquest.com/web/products/open/map">MapQuest</a></p>
+</div>
+
+<div class="slide">
 	<p>This is cool!<br/>So where do I start?<br/>
 	<img src="http://awesomegifs.com/wp-content/uploads/Ron-Swanson-is-excited.gif"/></p>
 </div>
@@ -172,11 +330,6 @@
 	</p>
 </div>
 
-<div class="slide">
-	<p>GeoJSON<br/><br/>
-	<img src="images/sublime.png"/></p>
-</div>
-
 <div class="slide image_full">
 	<p>The Basemap<br/>Do you want a custom basemap?<br/>Or is Google OK?<br>
 	<img src="images/googlemap.png"/></p>
@@ -204,16 +357,11 @@
 
 <div class="slide image_full">
 	<p>Learning Resources<br>
-		<a target="_blank" href="http://jsforcats.com/">Javascript For Cats</a><br/>
-	<img src="images/smiling-cat.jpg"/></p>
-</div>
-
-<div class="slide image_full">
-	<p>Other Learning Resources<br>
 		<a target="_blank" href="http://www.w3schools.com">w3schools</a><br/>
 		<a target="_blank" href="http://www.codecademy.com">Codecademy</a><br/>
 		<a target="_blank" href="http://www.codeschool.com">CodeSchool</a><br/>
 		<a target="_blank" href="http://www.lynda.com">Lynda.com</a><br/>
+		<a target="_blank" href="http://jsforcats.com/">Javascript For Cats</a><br/>
 	<img src="images/smiling-cat.jpg"/></p>
 </div>
 
@@ -263,35 +411,23 @@
 
 <div class="slide image_bottom">
 	<p>
-		<a target="_blank" href="http://www.qgis.com/">QGIS</a><br/>
-		<a target="_blank" href="https://cartodb.com/">CartoDB</a><br/>
-		<a target="_blank" href="http://geojson.org/">GeoJSON</a><br/>
-		<a target="_blank" href="https://github.com/mbostock/topojson/wiki">TopoJSON</a><br/>
-		<a target="_blank" href="https://developers.google.com/kml/documentation/kml_tut">KML</a><br/>
-		<a target="_blank" href="http://en.wikipedia.org/wiki/Comma-separated_values">CSV</a><br/>
+		<a target="_blank" href="https://cartodb.com/">QGIS</a><br/>
+		<a target="_blank" href="https://www.mapbox.com/mapbox.js/api/v1.6.4/">CartoDB</a><br/>
+		<a target="_blank" href="http://leafletjs.com/">GeoJSON</a><br/>
+		<a target="_blank" href="http://openlayers.org/">TopoJSON</a><br/>
+		<a target="_blank" href="http://developer.mapquest.com/web/products/open/sdk">KML</a><br/>
 	<img src="images/sandbox.jpg"/></p>
+</div>
+
+<div class="slide">
+	<p>GeoJSON<br/><br/>
+	<img src="images/sublime.png"/></p>
 </div>
 
 <div class="slide">
 	<p>
 		Where do I get data?<br/>General Purpose Datasets
 	</p>
-</div>
-
-<div class="slide image_bottom">
-	<p>
-		<a target="_blank" href="https://cartodb.com/">Natural Earth</a><br/>
-		<a target="_blank" href="https://www.mapbox.com/mapbox.js/api/v1.6.4/">OpenStreetMap</a><br/>
-		<a target="_blank" href="http://leafletjs.com/">U.S. Census Data</a><br/>
-	<img src="images/sandbox.jpg"/></p>
-</div>
-
-<div class="slide image_bottom">
-	<p>
-		<a target="_blank" href="https://cartodb.com/">Your own data.</a><br/>
-		<a target="_blank" href="https://www.mapbox.com/mapbox.js/api/v1.6.4/">Geocoding</a><br/>
-		<a target="_blank" href="http://leafletjs.com/">U.S. Census Data</a><br/>
-	<img src="images/sandbox.jpg"/></p>
 </div>
 
 <div class="slide">
