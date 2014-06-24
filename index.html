@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <html>
 <head>
-	<title>Hello, Web Maps</title>
+	<title>Get to Know a Web Map</title>
 	<link target="_blank" href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 	<style>
 
@@ -42,7 +42,7 @@
 		}
 		.slide{
 			background-color: #d1c9b8;
-			
+
 		}
 		.slide.image_bottom{
 			background-position: center bottom;
@@ -73,7 +73,7 @@
 		.slide.image_full{
 			background-color: black;
 		}
-		
+
 		.slide.image_full div{
 			opacity: .5;
 		}
@@ -81,12 +81,8 @@
 			color: white;
 			text-shadow:0px 0px 10px #000000;
 		}
-		.slide.image_full.repeat div{
-			background-position: 0 0;
-			background-repeat: repeat;
-		}
 		.slide p.title{
-			font-size: 120px;
+			font-size: 84px;
 		}
 
 		a{
@@ -124,7 +120,6 @@
 	<a class="citation" target="_blank" href="http://github.com/maptimeboston">Mike Foster and Andy Woodruff for Maptime Boston</a>
 </div>
 
-
 <div class="slide">
 	<p>Cartographers do this.<br/>
 	<img src="images/john-snow.jpg"/></p>
@@ -134,7 +129,6 @@
 	<p>Who is your audience?<br/><br/>
 	<img src="http://cbsfwbam.files.wordpress.com/2013/02/movie-audience-3d-glasses.jpg?w=620&h=349&crop=1"/></p>
 </div>
-
 
 <div class="slide">
 	<p>Data matters!<br>
@@ -178,6 +172,11 @@
 	</p>
 </div>
 
+<div class="slide">
+	<p>GeoJSON<br/><br/>
+	<img src="images/sublime.png"/></p>
+</div>
+
 <div class="slide image_full">
 	<p>The Basemap<br/>Do you want a custom basemap?<br/>Or is Google OK?<br>
 	<img src="images/googlemap.png"/></p>
@@ -215,7 +214,7 @@
 		<a target="_blank" href="http://www.codecademy.com">Codecademy</a><br/>
 		<a target="_blank" href="http://www.codeschool.com">CodeSchool</a><br/>
 		<a target="_blank" href="http://www.lynda.com">Lynda.com</a><br/>
-	</p>
+	<img src="images/smiling-cat.jpg"/></p>
 </div>
 
 <div class="slide">
@@ -264,23 +263,35 @@
 
 <div class="slide image_bottom">
 	<p>
-		<a target="_blank" href="https://cartodb.com/">QGIS</a><br/>
-		<a target="_blank" href="https://www.mapbox.com/mapbox.js/api/v1.6.4/">CartoDB</a><br/>
-		<a target="_blank" href="http://leafletjs.com/">GeoJSON</a><br/>
-		<a target="_blank" href="http://openlayers.org/">TopoJSON</a><br/>
-		<a target="_blank" href="http://developer.mapquest.com/web/products/open/sdk">KML</a><br/>
+		<a target="_blank" href="http://www.qgis.com/">QGIS</a><br/>
+		<a target="_blank" href="https://cartodb.com/">CartoDB</a><br/>
+		<a target="_blank" href="http://geojson.org/">GeoJSON</a><br/>
+		<a target="_blank" href="https://github.com/mbostock/topojson/wiki">TopoJSON</a><br/>
+		<a target="_blank" href="https://developers.google.com/kml/documentation/kml_tut">KML</a><br/>
+		<a target="_blank" href="http://en.wikipedia.org/wiki/Comma-separated_values">CSV</a><br/>
 	<img src="images/sandbox.jpg"/></p>
-</div>
-
-<div class="slide">
-	<p>GeoJSON<br/><br/>
-	<img src="images/sublime.png"/></p>
 </div>
 
 <div class="slide">
 	<p>
 		Where do I get data?<br/>General Purpose Datasets
 	</p>
+</div>
+
+<div class="slide image_bottom">
+	<p>
+		<a target="_blank" href="https://cartodb.com/">Natural Earth</a><br/>
+		<a target="_blank" href="https://www.mapbox.com/mapbox.js/api/v1.6.4/">OpenStreetMap</a><br/>
+		<a target="_blank" href="http://leafletjs.com/">U.S. Census Data</a><br/>
+	<img src="images/sandbox.jpg"/></p>
+</div>
+
+<div class="slide image_bottom">
+	<p>
+		<a target="_blank" href="https://cartodb.com/">Your own data.</a><br/>
+		<a target="_blank" href="https://www.mapbox.com/mapbox.js/api/v1.6.4/">Geocoding</a><br/>
+		<a target="_blank" href="http://leafletjs.com/">U.S. Census Data</a><br/>
+	<img src="images/sandbox.jpg"/></p>
 </div>
 
 <div class="slide">
@@ -291,38 +302,20 @@
 		<br/>
 </div>
 
-<div class="slide image_full">
-	<p>Web maps are more than just tiles.</p>
-	<img src="images/pins.jpg"/>
-</div>
-
-<div class="slide">
-	<p>Dynamic, interactive <em>feature layers</em> are the important other half of many web maps.</p>
-</div>
-
-<div class="slide">
-	<p><a href="http://en.wikipedia.org/wiki/GeoJSON" target="_blank">GeoJSON</a> is a geographic data format that plays well with web maps for feature layers</p>
-	<img src="images/geojson.png"/>
-</div>
-
-
-<div class="slide">
-	<img src="images/diagram.jpg"/>
-</div>
-
-
 <div class="slide">
 	<p>
 		Exploration Session
 	</p>
 </div>
 
+
+
+
 <div class="slide image_full">
 	<img src="images/anatomy.jpg"/>
 	<p>Thanks to Alan McConchie, Beth Schechter, and the Maptime team for much of this material!</p>
 	<a class="citation" target="_blank" href="https://github.com/maptime/anatomy-of-a-web-map">Anatomy of a Web Map</a></p>
 </div>
-
 
 <script>
 	// The following is mostly derived from https://github.com/tmcw/big
@@ -376,9 +369,8 @@
 	        img.style.display = 'none';
 		},
 
-		image_bottom: function(slide){
+		img_bottom: function(slide){
 			var img = slide.getElementsByTagName("img")[0];
-			if ( !img ) return;
 	        slide.style.backgroundImage = 'url(' + img.src + ')';
 	        img.style.display = 'none';
 		},
@@ -389,7 +381,7 @@
 
 			if ( img ){
 				slide.style.backgroundImage = 'url(' + img.src + ')';
-			} else if (!img && !slide.getElementsByTagName("iframe")[0]){
+			} else {
 				if ( p ){
 					p.style.marginTop = (slide.offsetHeight - p.offsetHeight) / 2 + "px";
 				}
